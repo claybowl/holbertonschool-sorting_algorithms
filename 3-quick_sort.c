@@ -1,10 +1,14 @@
 #include "sort.h"
 
 /**
-*
+* swap - swaps values of two integers
+* @array: array of integers
+* @a: first integer
+* @b: second iteger
+* @size: size of array
 *
 */
-void swap(int *array,int *a, int *b, size_t size)
+void swap(int *array, int *a, int *b, size_t size)
 {
 	int temp = *a;
 
@@ -15,7 +19,10 @@ void swap(int *array,int *a, int *b, size_t size)
 
 
 /**
-*
+* partition - partitions array of integers
+* @start: start integer.
+* @end: end integer.
+* @size: size of array.
 *
 */
 int partition(int *array, int start, int end, size_t size)
@@ -40,6 +47,14 @@ int partition(int *array, int start, int end, size_t size)
 	return (index);
 }
 
+/**
+* quickSort - sorts partition of integers.
+* @array: array of integers
+* @low: low marker for integers
+* @high: high marker for integers
+* @size: size of array
+*
+*/
 void quickSort(int *array, int low, int high, size_t size)
 {
 	int pivot;
@@ -53,9 +68,9 @@ void quickSort(int *array, int low, int high, size_t size)
 }
 
 /**
-*
-*
-*
+* quick_sort - algorithm for sorting array of integers.
+* @array: array of integers
+* @size: size of array
 */
 void quick_sort(int *array, size_t size)
 {

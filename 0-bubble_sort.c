@@ -6,7 +6,7 @@
 * @size: size of array
 * Return: bubble sorted array
 */
- void bubble_sort(int *array, size_t size)
+void bubble_sort(int *array, size_t size)
 {
 	int tmp = 0, sw = 1;
 	unsigned int i = 0;
