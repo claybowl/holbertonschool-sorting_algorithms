@@ -1,10 +1,10 @@
 #include "sort.h"
 
 /**
-* swap - swaps values of two integers
-* @array: array of integers
+* swap - function for swapping two integers.
+* @array: array of integers.
 * @a: first integer
-* @b: second iteger
+* @b: second integer
 * @size: size of array
 *
 */
@@ -17,13 +17,14 @@ void swap(int *array, int *a, int *b, size_t size)
 	print_array(array, size);
 }
 
-
 /**
-* partition - partitions array of integers
-* @start: start integer.
-* @end: end integer.
+* partition - function that partitions an array of integers
+* @array: array of integers
+* @start: mark for start of integers
+* @end: mark for end of integers
 * @size: size of array.
 *
+* Return: index
 */
 int partition(int *array, int start, int end, size_t size)
 {
