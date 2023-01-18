@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "sort.h"
 
 
@@ -5,7 +7,7 @@
  * Helper function for merge_sort. This merges
  * two sorted arrays (left, right) into a single (array)
  */
-void merge_sort(int *array, int *left, int left_size, int *right, int
+void merge(int *array, int *left, int left_size, int *right, int
 right_size) {
 	// defining integers
 	int i = 0, j = 0, k = 0;
@@ -14,7 +16,7 @@ right_size) {
 		if (left[i] <= right[j]) {
 			array[k++] = left[j++];
 		} else {
-			array[k++] = right[j++]:
+			array[k++] = right[j++];
 		}
 	}
 	// appends the remaining elements(left) to the result array
@@ -41,10 +43,10 @@ void merge_sort(int *array, size_t size) {
 	int *left = (int*)malloc(middle * sizeof(int));
 	int *right = (int*)malloc((size - middle) * sizeof(int));
 	// Move elements from the original array to the left/right (sub)arrays
-	for (int i = middle; i < size; i++) {
+	for (size_t i = middle; i < size; i++) {
 		left[i] = array[i];
 	}
-	for (int i = middle; i < size; i++) {
+	for (size_t i = middle; i < size; i++) {
 		right[i - middle] = array[i];
 	// merge sort left/right arrays
 	merge_sort(left, middle);
@@ -54,4 +56,5 @@ void merge_sort(int *array, size_t size) {
 	// free required memory for left/right arrays
 	free(left);
 	free(right);
+	}
 }
