@@ -30,5 +30,8 @@ void quick_sort(int *array, size_t size);
 void quickSort(int *array, int low, int high, size_t size);
 void swap(int *array, int *a, int *b, size_t size);
 int partition(int *array, int start, int end, size_t size);
+void merge_sort(int *array, int *left, int left_size, int *right, int
+right_size);
+void merge_sort(int *array, size_t size);
 
 #endif
