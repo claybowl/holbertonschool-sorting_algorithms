@@ -36,7 +36,7 @@ void merge_sort(int *array, size_t size) {
 		return;
 	}
 	/* define middle index of array */
-	int middle = size / 2;
+	size_t middle = size / 2;
 	/* Allocating memery for left/right arrays */
 	int *left = (int*)malloc(middle * sizeof(int));
 	int *right = (int*)malloc((size - middle) * sizeof(int));
