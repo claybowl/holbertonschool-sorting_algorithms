@@ -53,7 +53,7 @@ void merge_sort(int *array, int size) {
 	int *right = (int*)malloc((size - middle) * sizeof(int));
 	/* Move elements from the original array to the left/right (sub)arrays */
 	int i = 0, j = middle;
-    while (i < middle) {
+    while (i < (int) middle) {
         left[i] = array[i];
         i++;
     }
