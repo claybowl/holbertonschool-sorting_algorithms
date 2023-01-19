@@ -16,6 +16,7 @@ void print_merge(int *array, int *p1, int *p2, size_t size)
 	int size_p1 = size / 2;
 	int size_p2 = size - size_p1;
 
+	/** Compares elements of arrays and merges back to original array. Prints */
 	while (a < size_p1 && b < size_p2)
 	{
 
