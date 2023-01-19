@@ -61,7 +61,7 @@ void merge_sort(int *array, int size) {
         right[j - middle] = array[j];
         j++;
     }
-	/* merge sort left/right arrays */
+	/* merge sort left/right arrays  */
 	merge_sort(left, middle);
 	merge_sort(right, size - middle);
 	/* merge sorted left/right arrays to main array */
