@@ -12,8 +12,7 @@ void swap_nodes(int *array, size_t size, size_t indexA, size_t indexB);
  * @size: length of array
  *
  */
-void heap_sort(int *array, size_t size)
-{
+void heap_sort(int *array, size_t size) {
 	size_t heapSize;
 
 	if (!array || size <= 1)
@@ -35,8 +34,7 @@ void heap_sort(int *array, size_t size)
  * @size: length of array
  *
  */
-void build_max_heap(int *array, size_t size)
-{
+void build_max_heap(int *array, size_t size) {
 	int nodeIndex;
 
 	for (nodeIndex = size / 2 - 1; nodeIndex >= 0; nodeIndex--)
@@ -53,24 +51,23 @@ void build_max_heap(int *array, size_t size)
  * @parentIndex: index of parent node
  *
  */
-void heapify(int *array, size_t size, size_t heapSize, size_t parentIndex)
-{
-	size_t leftNodeIndex = parentIndex * 2 + 1;
-	size_t rightNodeIndex = leftNodeIndex + 1;
-	size_t largestIndex = parentIndex;
+void heapify(int *array, size_t size, size_t heapSize, size_t parentIndex) {
+	size_t leftNode = parentIndex * 2 + 1;
+	size_t rightNode = leftNode + 1;
+	size_t largest = parentIndex;
 
-	if (leftNodeIndex <= heapSize - 1
-			&& array[leftNodeIndex] > array[largestIndex])
-		largestIndex = leftNodeIndex;
+	if (leftNode <= heapSize - 1
+			&& array[leftNode] > array[largest])
+		largest = leftNode;
 
-	if (rightNodeIndex <= heapSize - 1
-			&& array[rightNodeIndex] > array[largestIndex])
-		largestIndex = rightNodeIndex;
+	if (rightNode <= heapSize - 1
+			&& array[rightNode] > array[largest])
+		largest = rightNode;
 
-	if (largestIndex != parentIndex)
+	if (largest != parentIndex)
 	{
-		swap_nodes(array, size, largestIndex, parentIndex);
-		heapify(array, size, heapSize, largestIndex);
+		swap_nodes(array, size, largest, parentIndex);
+		heapify(array, size, heapSize, largest);
 	}
 }
 
@@ -83,8 +80,7 @@ void heapify(int *array, size_t size, size_t heapSize, size_t parentIndex)
  * @indexB: second value to swap
  *
  */
-void swap_nodes(int *array, size_t size, size_t indexA, size_t indexB)
-{
+void swap_nodes(int *array, size_t size, size_t indexA, size_t indexB) {
 	int temp = array[indexA];
 
 	array[indexA] = array[indexB];
