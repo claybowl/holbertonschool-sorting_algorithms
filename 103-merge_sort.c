@@ -41,19 +41,19 @@ right_size) {
  * Return: void
  */
 
-void merge_sort(int *array, int size) {
+void merge_sort(int *array, size_t size) {
 	/* Return if array is smaller than 2 elements */
 	if (size < 2) {
 		return;
 	}
 	/* define middle index of array */
-	int middle = size / 2;
+	size_t middle = size / 2;
 	/* Allocating memery for left/right arrays */
 	int *left = (int*)malloc(middle * sizeof(int));
 	int *right = (int*)malloc((size - middle) * sizeof(int));
 	/* Move elements from the original array to the left/right (sub)arrays */
-	int i = 0, j = middle;
-    while (i < (int) middle) {
+	size_t i = 0, j = middle;
+    while (i < middle) {
         left[i] = array[i];
         i++;
     }
