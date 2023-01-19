@@ -47,13 +47,13 @@ void merge_sort(int *array, size_t size) {
 		return;
 	}
 	/* define middle index of array */
-	size_t middle = size / 2;
+	int middle = (int) size / 2;
 	/* Allocating memery for left/right arrays */
 	int *left = (int*)malloc(middle * sizeof(int));
 	int *right = (int*)malloc((size - middle) * sizeof(int));
 	/* Move elements from the original array to the left/right (sub)arrays */
 	int i = 0, j = middle;
-    while (i < (int) middle) {
+    while (i < middle) {
         left[i] = array[i];
         i++;
     }
