@@ -52,11 +52,15 @@ void merge_sort(int *array, int size) {
 	int *left = (int*)malloc(middle * sizeof(int));
 	int *right = (int*)malloc((size - middle) * sizeof(int));
 	/* Move elements from the original array to the left/right (sub)arrays */
-	for (int i = 0; i < middle; i++) {
-		left[i] = array[i];
-	}
-	for (int j = middle; j < size; j++) {
-		right[j - middle] = array[j];
+	int i = 0, j = middle;
+    while (i < middle) {
+        left[i] = array[i];
+        i++;
+    }
+    while (j < size) {
+        right[j - middle] = array[j];
+        j++;
+    }
 	/* merge sort left/right arrays */
 	merge_sort(left, middle);
 	merge_sort(right, size - middle);
@@ -65,5 +69,4 @@ void merge_sort(int *array, int size) {
 	/* free required memory for left/right arrays */
 	free(left);
 	free(right);
-	}
 }
