@@ -30,8 +30,7 @@ void quick_sort(int *array, size_t size);
 void quickSort(int *array, int low, int high, size_t size);
 void swap(int *array, int *a, int *b, size_t size);
 int partition(int *array, int start, int end, size_t size);
-void merge(int *array, int *left, int left_size, int *right, int
-right_size);
+void print_merge(int *array, int *p1, int *p2, size_t size);
 void merge_sort(int *array, size_t size);
 void swap_nodes(int *array, size_t size, size_t indexA, size_t indexB);
 void heapify(int *array, size_t size, size_t heapSize, size_t parentIndex);
