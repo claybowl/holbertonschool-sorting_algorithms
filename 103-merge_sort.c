@@ -2,9 +2,15 @@
 
 
 /**
- * Helper function for merge_sort. This merges
- * two sorted arrays (left, right) into a single (array)
+ * merge - merges arrays
+ *
+ * @leftArray: left array
+ * @leftSize: size of left array
+ * @rightArray: right array
+ * @rightSize: size of right array
+ * Return: void
  */
+
 void merge(int *array, int *left, int left_size, int *right, int
 right_size) {
 	/* defining integers */
@@ -28,8 +34,13 @@ right_size) {
 }
 
 /**
- * Sorts array of integers in ascending order
+ * merge_sort - merge sort recursively
+ *
+ * @array: int array to sort
+ * @size: size of array
+ * Return: void
  */
+
 void merge_sort(int *array, size_t size) {
 	/* Return if array is smaller than 2 elements */
 	if (size < 2) {
