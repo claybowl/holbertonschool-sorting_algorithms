@@ -1,66 +1,93 @@
 #include "sort.h"
+#include <stdlib.h>
+
+void build_max_heap(int *array, size_t heapSize);
+void heapify(int *array, size_t size, size_t heapSize, size_t parentIndex);
+void swap_nodes(int *array, size_t size, size_t indexA, size_t indexB);
 
 /**
- * heap_sort - Implementation of sift-down heap sort algorithm
- * @array: given array of integers to sort
- * @size: size of given array
+ * heap_sort - Sorts an array of numbers using the heap method
  *
- * Return: void
+ * @array: array to sort
+ * @size: length of array
+ *
  */
 void heap_sort(int *array, size_t size)
 {
-	int i = size / 2 - 1;
-	int j = size - 1;
+	size_t heapSize;
 
-	for (; i >= 0; i--)
+	if (!array || size <= 1)
+		return;
+
+	build_max_heap(array, size);
+	for (heapSize = size - 1; heapSize > 1; heapSize--)
 	{
-		heapify(array, size, i);
+		swap_nodes(array, size, 0, heapSize);
+		heapify(array, size, heapSize, 0);
 	}
-	for (; j >= 0; j--)
+	swap_nodes(array, size, 0, heapSize);
+}
+
+/**
+ * build_max_heap - heapifies an unsorted array
+ *
+ * @array: array to heapify
+ * @size: length of array
+ *
+ */
+void build_max_heap(int *array, size_t size)
+{
+	int nodeIndex;
+
+	for (nodeIndex = size / 2 - 1; nodeIndex >= 0; nodeIndex--)
+		heapify(array, size, size, nodeIndex);
+}
+
+/**
+ * heapify - heapifies a node and its children
+ * and recursively sifts smaller values down
+ *
+ * @array: entire array
+ * @size: array size
+ * @heapSize: size of heap within array
+ * @parentIndex: index of parent node
+ *
+ */
+void heapify(int *array, size_t size, size_t heapSize, size_t parentIndex)
+{
+	size_t leftNodeIndex = parentIndex * 2 + 1;
+	size_t rightNodeIndex = leftNodeIndex + 1;
+	size_t largestIndex = parentIndex;
+
+	if (leftNodeIndex <= heapSize - 1
+			&& array[leftNodeIndex] > array[largestIndex])
+		largestIndex = leftNodeIndex;
+
+	if (rightNodeIndex <= heapSize - 1
+			&& array[rightNodeIndex] > array[largestIndex])
+		largestIndex = rightNodeIndex;
+
+	if (largestIndex != parentIndex)
 	{
-		swap1(&array[0], &array[j]);
-		heapify(array, j, 0);
+		swap_nodes(array, size, largestIndex, parentIndex);
+		heapify(array, size, heapSize, largestIndex);
 	}
 }
 
 /**
- * heapify - Builds a binary heap
- * @array: Array to turn into a binary heap
- * @size: Size of array to turn into a heap
- * @i: index of array element
+ * swap_nodes - Swaps two values in an int array
  *
- * Return: Void
- */
-void heapify(int *array, size_t size, int i)
-{
-	int largest = i;
-	int left = 2 * i + 1;
-	int right = 2 * i + 2;
-	int N = (int)(size);
-
-	if (left < N && array[left] > array[largest])
-		largest = left;
-
-	if (right < N && array[right] > array[largest])
-		largest = right;
-
-	if (largest != i)
-	{
-		swap1(&array[i], &array[largest]);
-		heapify(array, size, largest);
-	}
-}
-
-/**
- * swap - swaps position of two elements in binary tree
- * @a: first element
- * @b: Second element
+ * @array: array of ints
+ * @size: array size
+ * @indexA: first value to swap
+ * @indexB: second value to swap
  *
- * Return: Void
  */
-void swap1(int *a, int *b)
+void swap_nodes(int *array, size_t size, size_t indexA, size_t indexB)
 {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+	int temp = array[indexA];
+
+	array[indexA] = array[indexB];
+	array[indexB] = temp;
+	print_array(array, size);
 }

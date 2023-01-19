@@ -33,8 +33,9 @@ int partition(int *array, int start, int end, size_t size);
 void merge(int *array, int *left, int left_size, int *right, int
 right_size);
 void merge_sort(int *array, size_t size);
+void swap_nodes(int *array, size_t size, size_t indexA, size_t indexB);
+void heapify(int *array, size_t size, size_t heapSize, size_t parentIndex);
+void build_max_heap(int *array, size_t size);
 void heap_sort(int *array, size_t size);
-void heapify(int *array, size_t size, int i);
-void swap1(int *a, int *b);
 
 #endif
