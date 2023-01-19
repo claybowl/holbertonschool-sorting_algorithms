@@ -36,5 +36,9 @@ void swap_nodes(int *array, size_t size, size_t indexA, size_t indexB);
 void heapify(int *array, size_t size, size_t heapSize, size_t parentIndex);
 void build_max_heap(int *array, size_t size);
 void heap_sort(int *array, size_t size);
+void bitonic_sort(int *array, size_t size);
+void bitonic_recursive(char arr, int *array, size_t size, size_t i);
+void merge_array(char arr, int *array, size_t size);
+void order(char arr, int *array, size_t size);
 
 #endif
