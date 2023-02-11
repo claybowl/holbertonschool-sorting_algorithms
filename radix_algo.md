@@ -54,7 +54,6 @@ auxillary_array = []
 - **What is a rolling summation?:**
 
   - The term "rolling summation" is not commonly used in the context of the radix sort algorithm. Radix sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping the keys by the individual digits which share the same significant position and value. The process does not involve any kind of summation.
-    If you're referring to a different algorithm, please provide more context and I would be happy to assist you further.
 
 - But first we subtract 1 from the 0 position so that the resulting sums yield correct positions in the Auxilliary array.
 
