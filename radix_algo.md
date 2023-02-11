@@ -91,6 +91,43 @@ auxillary_array = []
 
 # Done sorting!
 
+## Radix Algo Pseudo Code:
+```
+Radix_Sort(Array, p) // p is the number of passes
+
+       for j = 1 to p do
+
+            int count_array[10] = {0};
+
+            for i = 0 to n do
+
+                count_array[key of(Array[i]) in pass j]++ // count array stores the count of key
+
+            for k = 1 to 10 do
+
+                count_array[k] = count_array[k] + count_array[k-1]
+
+            for i = n-1 downto 0 do
+
+                result_array[ count_array[key of(Array[i])] ] = Array[j]
+
+                                                          //Construct the resulting array (result_array) by checking
+
+                                                                                 //new Array[i] position from count_array[k]
+
+                count_array[key of(Array[i])]--
+
+            for i=0 to n do
+
+                Array[i] = result_array[i]  
+
+                                                             //The main array Array[] now contains sorted numbers based on the current digit position.
+
+       the end for(j)
+
+ end function
+```
+
 ```
 #include <stdio.h>
 #include <math.h>
