@@ -1,6 +1,6 @@
 # Radix (LSD) Sorting Algorithms
 
-![algo_bro]([image_url](https://i.redd.it/il2jz9cvaez31.jpg))
+![algo_bro](https://i.redd.it/il2jz9cvaez31.jpg)
 
 ---
 
