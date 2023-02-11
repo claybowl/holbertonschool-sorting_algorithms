@@ -31,6 +31,7 @@ For this project you are given the following print_array, and print_list functio
 #include <stdlib.h>
 #include <stdio.h>
 
+
 /**
    * print_array - Prints an array of integers
     *
@@ -104,3 +105,39 @@ O(1)
 
 	Tests
 	Here is a quick tip to help you test your sorting algorithms with big sets of random integers: Random.org
+
+
+# Sorting Algorithms
+
+---
+
+## Radix Sort (LSD):
+
+- The LSD variant of radix sort performs a stable counting sort on the list for each digit, starting from the least significant (right-most) digit.
+
+- **When learning about the radix sort (LSD) I'm reading that the initial input array has a "current digit". For example, it says 48 has a current digit of 8. What does current digit mean?**
+
+- The "current digit" refers to the digit in the number being processed at a particular step in the radix sort algorithm. In the case of a Least Significant Digit (LSD) radix sort, the current digit refers to the rightmost digit of the number being processed.
+
+  For example, if the input array consists of the numbers 48, 35, 12, 19, and the algorithm is processing the LSD, the current digit would be the rightmost digit of each number in the array. In the first step, the current digit would be 8, 5, 2, 9.
+
+  Each digit of the numbers in the input array is processed from right to left, starting with the least significant digit (the LSD). After processing each digit, the input array is rearranged so that the numbers are in order based on their current digit. This process is repeated for each digit of the numbers in the array, until all the digits have been processed and the array is fully sorted.
+
+```
+input_array = [19, 48, 99, 71, 13, 52, 96, 73, 86, 7]
+count_array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+auxilliary_array = []
+
+```
+
+# Steps:
+
+- Starting Radix Sort. We will process digits from right to left. The first step will be to count occurances of digits from the input array.
+
+  - After first iteration through input_array:
+
+```
+input_array = [19, 48, 99, 71, 13, 52, 96, 73, 86, 7]
+count_array = [0, 1, 1, 2, 0, 0, 2, 1, 1, 2]
+auxilliary_array = []
+```
