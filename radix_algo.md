@@ -6,8 +6,6 @@
 
 - The LSD variant of radix sort performs a stable counting sort on the list for each digit, starting from the least significant (right-most) digit.
 
--
-
 - **When learning about the radix sort (LSD) I'm reading that the initial input array has a "current digit". For example, it says 48 has a current digit of 8. What does current digit mean?**
 
 - The "current digit" refers to the digit in the number being processed at a particular step in the radix sort algorithm. In the case of a Least Significant Digit (LSD) radix sort, the current digit refers to the rightmost digit of the number being processed.
@@ -22,7 +20,7 @@ Consider the input array **[19, 48, 99, 71, 13, 52, 96, 73, 86, 7]**
 
 1.  We initialize two arrays, count_array and auxiliary_array, both with the length of 10 to represent the possible values of a digit (0 to 9).
 2.  We process the least significant digit of each number in the input array and count the occurrences of each digit in the count_array.
-3.  We perform a "rolling summation" on the count*array by adding the value of each element to the previous element. The first element of the count_array is subtracted by 1 to make sure that the resulting sums yield the correct positions in the `auxiliary*-array`.
+3.  We perform a "rolling summation" on the count*array by adding the value of each element to the previous element. The first element of the count_array is subtracted by 1 to make sure that the resulting sums yield the correct positions in the `auxiliary_array`.
 4.  We use the count_array to determine the positions of each element in the input_array in the auxiliary_array.
 5.  We copy the elements in the auxiliary_array back to the input_array.
 6.  We repeat the same process, but this time using the next significant digit (moving from right to left).
@@ -32,7 +30,7 @@ Consider the input array **[19, 48, 99, 71, 13, 52, 96, 73, 86, 7]**
 ```
 input_array = [19, 48, 99, 71, 13, 52, 96, 73, 86, 7]
 count_array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-auxilliary_array = []
+auxillary_array = []
 ```
 
 # Steps:
@@ -46,7 +44,7 @@ auxilliary_array = []
 ```
 input_array = [19, 48, 99, 71, 13, 52, 96, 73, 86, 7]
 count_array = [0, 1, 1, 2, 0, 0, 2, 1, 1, 2]
-auxilliary_array = []
+auxillary_array = []
 ```
 
 - The next step is to do a rolling summation:
@@ -61,7 +59,7 @@ auxilliary_array = []
 ```
 input_array = [19, 48, 99, 71, 13, 52, 96, 73, 86, 7]
 count_array = [-1, 0, 1, 3, 3, 3, 5, 6, 7, 9]
-auxilliary_array = []
+auxillary_array = []
 ```
 
 - Now use the Count array to decide where to move values into the Auxilliary array
@@ -69,7 +67,7 @@ auxilliary_array = []
 ```
 input_array = [19, 48, 99, 71, 13, 52, 96, 73, 86, 7]
 count_array = [-1, -1, 0, 1, 3, 3, 3, 5, 6, 7]
-auxilliary_array = [71, 52, 13, 73, 96, 86, 7, 48, 19, 99]
+auxillary_array = [71, 52, 13, 73, 96, 86, 7, 48, 19, 99]
 ```
 
 - Now we move the value back to the Input Array.
@@ -78,7 +76,7 @@ auxilliary_array = [71, 52, 13, 73, 96, 86, 7, 48, 19, 99]
 ```
 input_array = [71, 52, 13, 73, 96, 86, 7, 48, 19, 99]
 count_array = [-1, 0, 2, 2, 2, 3, 4, 4, 6, 7]
-auxilliary_array = [7, 13, 19, 48, 52, 71, 73, 86, 96, 99]
+auxillary_array = [7, 13, 19, 48, 52, 71, 73, 86, 96, 99]
 ```
 
 - Now we move the value back to the input array.
@@ -86,7 +84,7 @@ auxilliary_array = [7, 13, 19, 48, 52, 71, 73, 86, 96, 99]
 ```
 input_array = [7, 13, 19, 48, 52, 71, 73, 86, 96, 99]
 count_array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-auxilliary_array = []
+auxillary_array = []
 ```
 
 # Done sorting!
