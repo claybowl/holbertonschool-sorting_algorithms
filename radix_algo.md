@@ -19,6 +19,7 @@
 ## Example:
 
 Consider the input array **[19, 48, 99, 71, 13, 52, 96, 73, 86, 7]**
+(**REMINDER**.. the array positions are: [zero, first, second, third, fourth, fifth, sixth, seventh, eighth, ninth])
 
 1.  We initialize two arrays, count_array and auxiliary_array, both with the length of 10 to represent the possible values of a digit (0 to 9).
 2.  We process the least significant digit of each number in the input array and count the occurrences of each digit in the count_array.
