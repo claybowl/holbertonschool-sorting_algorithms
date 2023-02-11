@@ -139,5 +139,5 @@ auxilliary_array = []
 ```
 input_array = [19, 48, 99, 71, 13, 52, 96, 73, 86, 7]
 count_array = [0, 1, 1, 2, 0, 0, 2, 1, 1, 2]
-auxilliary_array = []
+auxillary_array = []
 ```
