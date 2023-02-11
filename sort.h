@@ -40,5 +40,6 @@ void bitonic_sort(int *array, size_t size);
 void bitonic_recursive(char arr, int *array, size_t size, size_t i);
 void merge_array(char arr, int *array, size_t size);
 void order(char arr, int *array, size_t size);
+void radix_sort(int *array, size_t size);
 
 #endif

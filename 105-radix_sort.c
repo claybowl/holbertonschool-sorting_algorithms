@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include ,stdlib.h.
+#include <stdlib.h>
 #include <math.h>
 #include "sort.h"
 
@@ -13,7 +13,7 @@
  * 
  * Return: Array sorted by Redix (LSD) algorithm.
  */
-void radix_sort(int *array, size_t size);
+void radix_sort(int *array, size_t size)
 {
 	int i, j, k, m, p, q, w = WIDTH, d = 1;
 	int temp[size];
