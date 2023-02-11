@@ -1,6 +1,6 @@
 # Radix (LSD) Sorting Algorithms
 
-![algo_bro](https://i.redd.it/il2jz9cvaez31.jpg)
+![Example Image](https://i.redd.it/il2jz9cvaez31.jpg)
 
 ---
 
@@ -19,6 +19,7 @@
 ## Example:
 
 Consider the input array **[19, 48, 99, 71, 13, 52, 96, 73, 86, 7]**
+(**REMINDER**.. the array positions are: [zero, first, second, third, fourth, fifth, sixth, seventh, eighth, ninth])
 
 1.  We initialize two arrays, count_array and auxiliary_array, both with the length of 10 to represent the possible values of a digit (0 to 9).
 2.  We process the least significant digit of each number in the input array and count the occurrences of each digit in the count_array.
@@ -54,7 +55,6 @@ auxillary_array = []
 - **What is a rolling summation?:**
 
   - The term "rolling summation" is not commonly used in the context of the radix sort algorithm. Radix sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping the keys by the individual digits which share the same significant position and value. The process does not involve any kind of summation.
-    If you're referring to a different algorithm, please provide more context and I would be happy to assist you further.
 
 - But first we subtract 1 from the 0 position so that the resulting sums yield correct positions in the Auxilliary array.
 
@@ -90,6 +90,43 @@ auxillary_array = []
 ```
 
 # Done sorting!
+
+## Radix Algo Pseudo Code:
+```
+Radix_Sort(Array, p) // p is the number of passes
+
+       for j = 1 to p do
+
+            int count_array[10] = {0};
+
+            for i = 0 to n do
+
+                count_array[key of(Array[i]) in pass j]++ // count array stores the count of key
+
+            for k = 1 to 10 do
+
+                count_array[k] = count_array[k] + count_array[k-1]
+
+            for i = n-1 downto 0 do
+
+                result_array[ count_array[key of(Array[i])] ] = Array[j]
+
+                                                          //Construct the resulting array (result_array) by checking
+
+                                                                                 //new Array[i] position from count_array[k]
+
+                count_array[key of(Array[i])]--
+
+            for i=0 to n do
+
+                Array[i] = result_array[i]  
+
+                                                             //The main array Array[] now contains sorted numbers based on the current digit position.
+
+       the end for(j)
+
+ end function
+```
 
 ```
 #include <stdio.h>
