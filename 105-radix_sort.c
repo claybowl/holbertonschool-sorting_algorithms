@@ -15,12 +15,14 @@
  */
 void radix_sort(int *array, size_t size)
 {
-	// Defines variables for loops
+	/* Defines variables for loops */
 	size_t i, j, k, m, p, w = WIDTH, d = 1;
-	// Create our temporary array
-	int temp[size];
+	/* Create our temporary array */
+	int *temp = malloc(sizeof(int) * size);
+	if (!temp)
+		return;
 
-	// Loops through digit places. Starts with least significant (right)
+	/* Loops through digit places. Starts with least significant (right) */
 	for (i = 0; i < w; i++, d *= BASE)
 	{
 		for (j = 0; j < BASE; j++)
@@ -40,4 +42,6 @@ void radix_sort(int *array, size_t size)
 		printf("Pass %ld: ", i + 1);
 		print_array(array, size);
 	}
+
+	free(temp);
 }
