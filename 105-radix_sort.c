@@ -28,13 +28,13 @@ void radix_sort(int *array, size_t size)
 		for (j = 0; j < BASE; j++)
 		{
 			m = 0;
+			int start = j * BASE;
 			for (k = 0; k < size; k++)
 			{
 				p = array[k] / d % BASE;
 				if (p == j)
 					temp[m++] = array[k];
 			}
-			int start = j * BASE;
 			int q = start;
 			for (k = 0; k < m; k++, q += BASE)
 				array[q] = temp[k];
