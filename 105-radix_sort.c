@@ -7,7 +7,7 @@
 #define WIDTH 3
 
 /**
- * radix_sort - sorts array of int in ascending order using Radix sort
+ * counting_sort - Separate function for counting sort.
  * @array: array to be sorted.
  * @size: Number of elements in the array
  * @d: digit to be sorted.
